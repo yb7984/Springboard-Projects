@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Memory Game!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Memory Game!</h1>
+    <button id="start">Start the game</button>
+    <button id="restart">Reset</button>
+    Playing with
+    <select id="count">
+      <option value="2">4</option>
+      <option value="3">6</option>
+      <option value="4">8</option>
+      <option value="5" selected>10</option>
+    </select>
+    Cards and 
+    <select id="game_style">
+      <option value="0">Set Colors</option>
+      <option value="1">Random Colors</option>
+      <option value="2">Images</option>
+    </select>
+    <div>
+      <span id="matches">0</span> Cards Matched
+    </div>
+    <div>
+      Time Spend:<span id="score"></span> seconds,
+      Game record: <span id="score_record"></span> seconds
+    </div>
+    <div id="game">
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
