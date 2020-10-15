@@ -1,6 +1,9 @@
 body{
   font-size: 1.2em;
 }
+h1{
+  text-align: center;
+}
 button,select{
   font-size: 1.2em;
 }
