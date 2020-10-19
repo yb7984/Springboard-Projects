@@ -20,7 +20,7 @@ function makeBoard() {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
   const arr = [];
   for (let i = 0; i < WIDTH; i++) {
-    arr.push(null);
+    arr[i] = null;
   }
   for (let i = 0; i < HEIGHT; i++) {
     board[i] = [...arr];
@@ -222,6 +222,9 @@ function checkForWin() {
       }
     }
   }
+
+  //nobody wins return false;
+  return false;
 }
 
 makeBoard();
