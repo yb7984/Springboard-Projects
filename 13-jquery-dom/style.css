@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+/* title */
+#title{
+  text-align: center;
+  text-shadow: 2px 2px #000000;
+  font-size: 3em;
+  font-weight: 500;
+  font-family: 'Dancing Script', cursive;
+}
+#panel{
+  font-size: 2em;
+  font-weight: 200;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#panel label{
+  width: 300px;
+  margin: 10px;
+}
+#panel div{
+  padding: 10px;
+}
+#panel input{
+  font-size: 1.0em;
+  font-weight: 200;
+  padding: 2px;
+}
+#frm_action{
+  width: 100%;
+  text-align: center;
+}
+#submit{
+  padding: 10px 20px 10px 20px;
+  font-size: 1.5em;
+  font-weight: 500;
+  border-radius: 10px;
+}
+#list{
+  font-size: 1.5em;
+}
+#list table{
+  width: 100% ;
+  font-size: 1.2em;
+  border: solid 1px;
+}
+#list table thead{
+  text-align: left;
+  background-color:silver;
+}
+#list table thead label{
+  cursor: pointer;
+}
+#list table thead td{
+  padding: 5px;
+}
+#list table tbody tr:hover{
+  border: solid 1px;
+  background-color: teal  ;
+}
+#list table td{
+  padding: 5px;
+}
+.btn-delete{
+  padding: 10px;
+  font-size: 1em;
+  color: red;
+}
+.sort-indicator{
+  width: 0; 
+  height: 0; 
+}
+.arrow-up {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black;
+  position: relative;
+  top: -25px;
+  left: 20px;
+}
+
+.arrow-down {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid black;
+  position: relative;
+  top: 25px;
+  left: 20px;
+}
+
+.arrow-right {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid black;
+}
+
+.arrow-left {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-right:10px solid black; 
+}

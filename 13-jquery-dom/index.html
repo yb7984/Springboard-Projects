@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Movie App</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="style.css" rel="stylesheet" 　 />
+</head>
+
+<body>
+  <div id="title">Movie App</div>
+  <form id="frm_movie">
+    <div id="panel">
+      <div>
+        <label for="move_title">Title:</label>
+        <input type="text" id="move_title" placeholder="Input the movie title here" minlength="2" required />
+      </div>
+      <div>
+        <label for="move_rating">Rating:</label>
+        <input type="number" id="move_rating" step="1" min="0" max="10" required />
+      </div>
+    </div>
+    <div id="frm_action">
+      <button id="submit" type="submit">Submit</button>
+    </div>
+  </form>
+  <div id="list">
+    <table id="list_table">
+      <thead>
+        <tr>
+          <th><label sort-field="title" sort-asc="false">Title</label><span class="sort-indicator"></span></th>
+          <th><label sort-field="rating" sort-asc="true">Rating</label><span class="sort-indicator"></span></th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
