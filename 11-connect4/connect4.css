@@ -34,10 +34,10 @@
   top : -20px;
 }
 .p1{
-  background-color: green;
+  background-color: red;
 }
 .p2{
-  background-color: pink;
+  background-color: blue;
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
