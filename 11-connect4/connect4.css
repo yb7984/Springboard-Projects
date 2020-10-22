@@ -28,7 +28,7 @@
   margin: 5px;
   width: 80%;
   height: 80%;
-  border-radius: 20px;
+  border-radius: 50%;
   transition: position 1s ease-in-out;
   position: absolute;
   top : -20px;
