@@ -27,13 +27,21 @@ class SerialGenerator:
 
     
     def __repr__(self):
-        """return string representation of an instance"""
-        return f"SerialGenerator(start={self.start})"
+        """
+        return string representation of an instance
+        >>> serial = SerialGenerator(start=100)
+        >>> serial
+        <SerialGenerator start=100 next=101>
+        """
+        return f"<SerialGenerator start={self.start} next={self.current + 1}>"
     
     def generate(self):
-        """Generate the serial number return next next sequential number"""
+        """
+        Generate the serial number return next next sequential number
+        """
+        current = self.current
         self.current += 1
-        return self.current - 1
+        return current
 
     def reset(self):
         """Reset the number back to the original start number"""

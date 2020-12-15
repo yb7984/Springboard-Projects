@@ -1,24 +1,21 @@
 """Word Finder: finds random words from a dictionary."""
-from random import randint
+import random
 
 class WordFinder:
     """
     Class to read words from file and return a random word
     
     >>> wf = WordFinder('words.txt')
-    3 words read
+    235886 words read
 
-    >>> wf.random()
-    'cat'
+    >>> word = wf.random()
+    >>> word in wf.words 
+    True
 
-    >>> wf.random()
-    'cat'
+    >>> word = wf.random()
+    >>> word in wf.words 
+    True
 
-    >>> wf.random()
-    'porcupine'
-
-    >>> wf.random()
-    'dog'
     """
 
     def __init__(self , filename):
@@ -35,7 +32,7 @@ class WordFinder:
         
     def random(self):
         """Return a random word from the list"""
-        return self.words[randint(0 , len(self.words) - 1)]
+        return self.words[random.randint(0 , len(self.words) - 1)]
 
     def read_file(self , filename):
         """Read the file of filename and put words in to a list"""
