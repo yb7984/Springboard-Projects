@@ -15,8 +15,20 @@ class SpecialWordFinder(WordFinder):
     apple
     mango
 
-    When we work with this, we want it to return one of the actual foods, like “kale” or “apple”, but never to return the blank lines or comments.
+    When we work with this, we want it to return one of the actual foods, 
+    like “kale” or “apple”, but never to return the blank lines or comments.
     
+    >>> wf = SpecialWordFinder('veggies.txt')
+    10 words read
+
+    >>> word = wf.random()
+    >>> word in wf.words and word != "" and not word.startswith("#")
+    True
+
+    >>> word = wf.random()
+    >>> word in wf.words and word != "" and not word.startswith("#")
+    True
+
     """
     def __init__(self , filename):
         """Create a subclass of WordFinder"""

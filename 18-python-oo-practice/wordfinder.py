@@ -15,7 +15,7 @@ class WordFinder:
     >>> word = wf.random()
     >>> word in wf.words 
     True
-
+ 
     """
 
     def __init__(self , filename):
@@ -39,5 +39,9 @@ class WordFinder:
         self.words = []
         with open(filename , "r") as file:
             for line in file:
-                self.words.append(line.rstrip())
+                self.fill_list(line)
+
+    def fill_list(self , line):
+        """Put the word into the list"""
+        self.words.append(line.rstrip())
 
