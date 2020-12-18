@@ -1,0 +1,24 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+#main-content{
+
+}
+#main-content h1{
+    margin: 10px;
+    padding: 10px;
+}
+#main-content div{
+    margin: 10px;
+    padding: 10px;
+    max-width: 600px;
+    align-self: center;
+}
+#main-content div span{
+    font-weight: bold;
+}
+#main-content div input{
+    width: 200px;
+}
+
