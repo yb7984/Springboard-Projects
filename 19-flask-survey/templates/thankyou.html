@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ survey.title }}
+{% endblock %}
+
+{% block content %}
+<h1>
+    {{ survey.title }}
+</h1>
+<h2>
+    Thank you for taking the survey!
+</h2>
+
+<div class="content">
+    <ul>
+        {% for question in survey.questions %}
+            <li><b>{{question.question}}</b> {{responses[loop.index0]}}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="action">
+    <form method="POST" action="/reset">
+        <button type="submit">Go back and restart</button>
+    </form>
+</div>
+{% endblock %}
