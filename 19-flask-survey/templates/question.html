@@ -13,7 +13,7 @@
 {% endfor %}
 <form action="/answer">
     <div class="question">
-        {{ question_index }} . {{survey.questions[question_index].question}}
+        {{survey.questions[question_index].question}}
         <input type="hidden" name="question_index" value="{{question_index}}">
     </div>
     <div class="answers">
@@ -25,6 +25,12 @@
             {% endfor %}
         </ul>
     </div>
+    {% if survey.questions[question_index].allow_text %}
+    <div class="comment">
+        <h2>Comment:</h2>
+        <textarea name="comment"></textarea>
+    </div>
+    {% endif %}
     <div class="action">
         <button type="submit">Submit</button>
     </div>

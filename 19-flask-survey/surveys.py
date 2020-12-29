@@ -1,3 +1,5 @@
+import json
+
 class Question:
     """Question on a questionnaire."""
 
@@ -22,6 +24,17 @@ class Survey:
         self.instructions = instructions
         self.questions = questions
 
+class Response(dict):
+    """Response"""
+    
+    def __init__(self, answer , comment = ""):
+        """Create response"""
+
+        dict.__init__(self , answer=answer , comment=comment)
+
+    def get_text(self):
+        """Return the show text"""
+        return f"{self['answer']} {self['comment']}" if self['comment'] else self['answer'] 
 
 satisfaction_survey = Survey(
     "Customer Satisfaction Survey",

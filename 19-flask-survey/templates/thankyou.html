@@ -15,7 +15,7 @@
 <div class="content">
     <ul>
         {% for question in survey.questions %}
-            <li><b>{{question.question}}</b> {{responses[loop.index0]}}</li>
+            <li><b>{{question.question}}</b> {{responses[loop.index0]["answer"]}} {{responses[loop.index0]["comment"]}}</li>
         {% endfor %}
     </ul>
 </div>
@@ -25,4 +25,9 @@
         <button type="submit">Go back and restart</button>
     </form>
 </div>
+
+
+<p>
+    <a href="/surveys">See more surveys here!</a>
+</p>
 {% endblock %}
