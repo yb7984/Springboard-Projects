@@ -1,3 +1,5 @@
+"""SessionHandler suite"""
+
 from flask import request, session
 from surveys import *
 
@@ -13,11 +15,11 @@ def set_responses(responses):
     """Set the responses value"""
     session["responses"] = responses
 
-def set_current_responses(item):
+def set_current_responses(response):
     """Set the current responses value"""
     responses = get_responses()
     current_responses = get_current_responses()
-    current_responses.append(item)
+    current_responses.append(response)
 
     survey = get_current_survey_key()
 
