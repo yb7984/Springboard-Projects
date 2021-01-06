@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create a user
+{% endblock %}
+
+{% block content %}
+<div class="form">
+    <h1>Create a User</h1>
+    <form method="POST">
+        {% if message %}
+        <div class="message">
+            {{message}}
+        </div>
+        {% endif %}
+        <div>
+            First Name
+        </div>
+        <input type="text" id="first_name" name="first_name" value="{{first_name}}" required />
+        <div>
+            Last Name
+        </div>
+        <input type="text" id="last_name" name="last_name" value="{{last_name}}" required />
+        <div>
+            Image Url
+        </div>
+        <input type="url" id="image_url" name="image_url" value="{{image_url}}" />
+        <div class="action">
+            <button type="submit" class="button button-submit">Add</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

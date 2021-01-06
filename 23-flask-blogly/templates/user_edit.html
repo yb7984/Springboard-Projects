@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit a user
+{% endblock %}
+
+{% block content %}
+<div class="form">
+    <h1>Edit a User</h1>
+    <form method="POST">
+        {% if message %}
+        <div class="message">
+            {{message}}
+        </div>
+        {% endif %}
+        <div>
+            First Name
+        </div>
+        <input type="hidden" id="id" name="id" value="{{user.id}}" />
+        <input type="text" id="first_name" name="first_name" value="{{user.first_name}}" required />
+        <div>
+            Last Name
+        </div>
+        <input type="text" id="last_name" name="last_name" value="{{user.last_name}}" required />
+        <div>
+            Image Url
+        </div>
+        <input type="url" id="image_url" name="image_url" value="{{user.image_url}}" />
+        <div class="action">
+            <button type="submit" class="button button-submit">Update</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
