@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{post.title}}
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <h1>{{post.title}}</h1>
+    <div class="content">
+        {{post.content}}
+    </div>
+    <div class="author">
+        Posted by {{post.user.full_name}} on {{post.created_at.strftime(" %a %b %d %Y , %I:%M %p")}}
+    </div>
+    <div>
+        <form action="/posts/{{post.id}}/delete" method="POST">
+            <a href="/posts/{{post.id}}/edit" class="button button-edit">Edit</a>
+            <button type="submit" class="button button-delete">Delete</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -11,8 +11,24 @@
     width: 120px;
     height: 150px;
 }
+.menu{
+    background-color: blue;
+    padding: 10px;
+    font-size: 1.5em;
+}
+.menu a{
+    color: white;
+    padding: 10px;
+}
+.menu a:hover{
+    background-color: turquoise;
+}
 .main {
     padding: 10px;
+}
+.content, .author{
+    font-size: 1.2em;
+    padding: 5px;
 }
 .form {
     font-size: 1.5em;
@@ -24,6 +40,12 @@
 .form input{
     width: 100%;
     font-size: 1em;
+    margin: 5px;
+}
+.form textarea{
+    width: 100%;
+    font-size: 1em;
+    height: 100px;
     margin: 5px;
 }
 .action{
@@ -41,6 +63,10 @@
 }
 .button-submit{
     background-color: green;
+    color: white;
+}
+.button-reset{
+    background-color: cornflowerblue;
     color: white;
 }
 .button-edit{

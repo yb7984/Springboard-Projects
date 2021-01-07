@@ -1,6 +1,6 @@
 from unittest import TestCase
 from app import app,db
-from models import User, connect_db
+from models import User, Post, connect_db
 
 
 #Use test database
@@ -26,7 +26,12 @@ class FlaskTests(TestCase):
         db.session.add(user)
         db.session.commit()
 
+        post = Post(user_id=user.id , title="test title" , content="test content")
+        db.session.add(post)
+        db.session.commit()
+
         self.user_id = user.id
+        self.post_id = post.id
 
     def tearDown(self):
         """Clean up any faulted transaction."""
@@ -52,6 +57,7 @@ class FlaskTests(TestCase):
             self.assertEqual(res.status_code, 200)
             self.assertIn("AAA BBB", html)
             self.assertIn("sample_url" , html)
+            self.assertIn("test title" , html)
 
     
     def test_user_new(self):
@@ -106,9 +112,87 @@ class FlaskTests(TestCase):
 
             self.assertEqual(res.status_code , 200)
             # self.assertIn("http://localhost/users/" , res.location)
-            self.assertNotIn(user.get_full_name() , html)
+            self.assertNotIn(user.full_name , html)
+    
+
+    def test_index(self):
+        """Testing the home page"""
+        with app.test_client() as client:
+            res = client.get('/')
+            html = res.get_data(as_text=True)
+
+            self.assertEqual(res.status_code, 200)
+            self.assertIn("Blogly Recent Posts", html)
 
     
+    def test_post(self):
+        """Testing the post detail page"""
+        with app.test_client() as client:
+            res = client.get(f'/posts/{self.post_id}')
+            html = res.get_data(as_text=True)
+
+            self.assertEqual(res.status_code, 200)
+            self.assertIn("test title", html)
+
+
+    def test_post_new(self):
+        """Testing the add post form"""
+
+        user = User.query.get(self.user_id)
+
+        with app.test_client() as client:
+            res = client.get(f'/users/{self.user_id}/posts/new')
+            html = res.get_data(as_text=True)
+
+            self.assertEqual(res.status_code, 200)
+            self.assertIn(f"Add Post for {user.full_name}", html)
+
+    def test_post_new_post(self):
+        """Testing the add post form handling"""
+        with app.test_client() as client:
+            res = client.post(f'/users/{self.user_id}/posts/new' , data={"title":"test title 1" , "content":"test content 1"} , follow_redirects=True)
+            html = res.get_data(as_text=True)
+
+            self.assertEqual(res.status_code , 200)
+            # self.assertIn("http://localhost/users/" , res.location)
+            self.assertIn("test title 1" , html)
+            self.assertIn("test content 1" , html)
+
+    def test_post_edit(self):
+        """Testing the edit post form"""
+        post = Post.query.first()
+
+        with app.test_client() as client:
+            res = client.get(f'/posts/{post.id}/edit')
+            html = res.get_data(as_text=True)
+
+            self.assertEqual(res.status_code, 200)
+            self.assertIn("Edit Post", html)
+            self.assertIn(post.title , html)
+            self.assertIn(post.content , html)
+
+    def test_post_edit_post(self):
+        """Testing the update post handling"""
+        post = Post.query.first()
+        with app.test_client() as client:
+            res = client.post(f'/posts/{post.id}/edit' , data={"id":post.id, "title":"title update" , "content":"content update"} , follow_redirects=True)
+            html = res.get_data(as_text=True)
+
+            self.assertEqual(res.status_code , 200)
+            
+            self.assertIn("title update" , html)
+            self.assertIn("content update" , html)
+
+    def test_post_delete(self):
+        """Testing the delete user handling"""
+        post = Post.query.first()
+        id = post.id
+        with app.test_client() as client:
+            res = client.post(f'/posts/{post.id}/delete' , data={} , follow_redirects=True)
+            html = res.get_data(as_text=True)
+
+            self.assertEqual(res.status_code , 200)
+            self.assertNotIn(post.title , html)
 
     
 

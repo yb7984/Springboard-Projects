@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="header"><a href="/">Home</a></div>
+  <div class="menu"><a href="/">Home</a> <a href="/users">Users</a></div>
   {% for msg in get_flashed_messages() %}
   <div class="message">{{ msg }}</div>
   {% endfor %}

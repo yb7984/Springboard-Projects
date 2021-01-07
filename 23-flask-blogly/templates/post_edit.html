@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit Post
+{% endblock %}
+
+{% block content %}
+<div class="form">
+    <h1>Edit Post</h1>
+    <form method="POST">
+        {% if message %}
+        <div class="message">
+            {{message}}
+        </div>
+        {% endif %}
+        <div>
+            Title
+        </div>
+        <input type="hidden" id="user_id" name="user_id" value="{{post.user_id}}" />
+        <input type="hidden" id="id" name="id" value="{{post.id}}" />
+        <input type="text" id="title" name="title" value="{{post.title}}" required />
+        <div>
+            Content
+        </div>
+        <textarea id="content" name="content">{{post.content}}</textarea>
+        <div class="action">
+            <a href="/users/{{post.user_id}}" class="button button-reset">Cancel</a>
+            <button type="submit" class="button button-submit">Update</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

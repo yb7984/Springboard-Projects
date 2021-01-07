@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create a user
+{% endblock %}
+
+{% block content %}
+<div class="form">
+    <h1>Add Post for {{user.full_name}}</h1>
+    <form method="POST">
+        {% if message %}
+        <div class="message">
+            {{message}}
+        </div>
+        {% endif %}
+        <div>
+            Title
+        </div>
+        <input type="hidden" id="user_id" name="user_id" value="{{user.id}}" />
+        <input type="text" id="title" name="title" value="{{title}}" required />
+        <div>
+            Content
+        </div>
+        <textarea id="content" name="content">{{content}}</textarea>
+        <div class="action">
+            <button type="reset" class="button button-reset">Cancel</button><button type="submit" class="button button-submit">Add</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
