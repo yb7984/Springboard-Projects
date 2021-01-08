@@ -23,6 +23,15 @@ Edit Post
             Content
         </div>
         <textarea id="content" name="content">{{post.content}}</textarea>
+        <div>
+            Tags
+        </div>
+        <div>
+            {% for tag in tags %}
+                <input type="checkbox" name="tags" id="tags{{tag.id}}" value="{{tag.id}}" {{ "checked" if post.has_tag(tag.id) else "" }} />
+                <label for="tags{{tag.id}}">{{tag.name}}</label>
+            {% endfor %}
+        </div>
         <div class="action">
             <a href="/users/{{post.user_id}}" class="button button-reset">Cancel</a>
             <button type="submit" class="button button-submit">Update</button>

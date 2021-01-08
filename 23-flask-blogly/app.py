@@ -2,7 +2,7 @@
 
 from flask import Flask,request,session,render_template,redirect,flash,jsonify
 from flask_debugtoolbar import DebugToolbarExtension
-from models import db, connect_db,User,Post
+from models import db, connect_db,User,Post,Tag,PostTag
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly'
@@ -53,11 +53,17 @@ def handle_user_new():
         message = "First Name and Last Name are required!"
         return render_template("user_new.html" , first_name=first_name , last_name=last_name , image_url=image_url , message=message)
     
-    user = User(first_name=first_name , last_name=last_name , image_url = image_url)
-    db.session.add(user)
-    db.session.commit()
+    try:
+        user = User(first_name=first_name , last_name=last_name , image_url = image_url)
+        db.session.add(user)
+        db.session.commit()
 
-    return redirect(f"/users/{user.id}")
+        return redirect(f"/users/{user.id}")
+    except:
+        db.session.rollback()
+        message = "Erro when adding a user!"
+        return render_template("user_new.html" , first_name=first_name , last_name=last_name , image_url=image_url , message=message)
+    
 
 @app.route("/users/<int:id>")
 def show_user(id):
@@ -93,32 +99,43 @@ def handle_user_edit(id):
         message = "First Name and Last Name are required!"
         return render_template("user_edit.html" , user=user , message=message)
     
-    
-    db.session.add(user)
-    db.session.commit()
+    try:
+        db.session.add(user)
+        db.session.commit()
+        return redirect(f"/users/{user.id}")
+    except:
+        db.session.rollback()
+        message = "Error when updating a user!"
+        return render_template("user_edit.html" , user=user , message=message)
 
-    return redirect(f"/users/{user.id}")
 
 
 @app.route("/users/<int:id>/delete" , methods=["POST"])
 def handle_user_delete(id):
     """Handle the user delete action"""
 
-    User.query.filter_by(id=id).delete()
+    try:
+        User.query.filter_by(id=id).delete()
 
-    db.session.commit()
-    
-    flash("Successfully delete a user!")
+        db.session.commit()
+        
+        flash("Successfully delete a user!")
 
-    return redirect("/users")
+        return redirect("/users")
+    except:
+        db.session.rollback()
+        flash("Error when deleting a user!")
+
+        return redirect(f"/users/{id}")
 
 
 @app.route("/users/<int:id>/posts/new")
 def show_new_post_form(id):
     """Show the add new post form"""
     user = User.query.get_or_404(id)
+    tags = Tag.query.all()
 
-    return render_template("post_new.html" , user=user)
+    return render_template("post_new.html" , user=user , tags=tags)
 
 @app.route("/users/<int:id>/posts/new" , methods=["POST"])
 def handle_new_post_form(id):
@@ -126,17 +143,33 @@ def handle_new_post_form(id):
     user = User.query.get_or_404(id)
     title = request.form.get("title" , "").strip()
     content = request.form.get("content" , "")
+    tags = request.form.getlist("tags")
 
     if len(title) == 0:
         message = "Title is required"
         return render_template("post_new.html" , user=user , title=title , content=content , message=message)
     
-    post = Post(user_id = user.id , title=title , content=content)
+    try:
+        post = Post(user_id = user.id , title=title , content=content)
 
-    db.session.add(post)
-    db.session.commit()
+        db.session.add(post)
+        db.session.commit()
 
-    return redirect(f"/posts/{post.id}")
+        if tags:
+            for tag_id in tags:
+                tag = Tag.query.get(int(tag_id))    
+                post.tags.append(tag)
+            
+            db.session.add(post)
+            db.session.commit()
+
+        return redirect(f"/posts/{post.id}")
+    except:
+        db.session.rollback()
+        message = "Error when adding a post!"
+        return render_template("post_new.html" , user=user , title=title , content=content , message=message)
+    
+    
 
 
 @app.route("/posts/<int:id>")
@@ -151,7 +184,9 @@ def show_post(id):
 def show_edit_post_form(id):
     """Show the edit edit post form"""
     post = Post.query.get_or_404(id)
-    return render_template("post_edit.html" , post=post)
+    tags = Tag.query.all()
+
+    return render_template("post_edit.html" , post=post , tags=tags)
 
 @app.route("/posts/<int:id>/edit" , methods=["POST"])
 def handle_edit_post_form(id):
@@ -159,13 +194,25 @@ def handle_edit_post_form(id):
     post = Post.query.get_or_404(id)
     post.title = request.form.get("title" , "").strip()
     post.content = request.form.get("content" , "")
+    tags = request.form.getlist("tags")
 
     if len(post.title) == 0:
         message = "Title is required"
         return render_template("post_edit.html" , post=post , message=message)
 
-    db.session.add(post)
-    db.session.commit()
+    post.tags.clear() 
+    for tag_id in tags:
+        tag = Tag.query.get(int(tag_id))    
+        post.tags.append(tag)
+
+    try:
+        db.session.add(post)
+        db.session.commit()
+    except:
+        db.session.rollback()
+        message = "Error when updating a post!"
+        return render_template("post_edit.html" , post=post , message=message)
+
 
     return redirect(f"/posts/{post.id}")
 
@@ -177,13 +224,118 @@ def handle_delete_post(id):
     post = Post.query.get_or_404(id)
     user_id = post.user_id
 
-    Post.query.filter_by(id=id).delete()
+    try:
+        Post.query.filter_by(id=id).delete()
 
-    db.session.commit()
+        db.session.commit()
+        
+        flash("Successfully delete a post!")
+
+        return redirect(f"/users/{user_id}")
+    except:
+        db.session.rollback()
+
+        flash("Error when deleting a post!")
+
+        return redirect(f"/posts/{id}")
     
-    flash("Successfully delete a post!")
 
-    return redirect(f"/users/{user_id}")
+
+
+@app.route("/tags")
+def show_tags():
+    """Show all tags"""
+
+    tags = Tag.query.all()
+
+    return render_template("tags.html" , tags=tags)
+
+
+@app.route("/tags/new")
+def show_tag_new():
+    """Show the new tag form"""
+    return render_template("tag_new.html")
+
+@app.route("/tags/new" , methods = ["POST"])
+def handle_tag_new():
+    """Handle the add tag post action"""
+    name = request.form.get("name" , "").strip()
+
+    if len(name) == 0:
+        message = "Name is required!"
+        return render_template("tag_new.html" , name=name , message=message)
+    elif Tag.query.filter_by(name=name).count() > 0:
+        message = f"{name} already exist! Please try another one!"
+        return render_template("tag_new.html" , name=name , message=message)
+    try:
+        tag = Tag(name=name)
+        db.session.add(tag)
+        db.session.commit()
+    except:
+        db.session.rollback()
+        message = "Error when adding a tag!"
+        return render_template("tag_new.html" , name=name , message=message)
+
+
+    return redirect(f"/tags/{tag.id}")
+
+@app.route("/tags/<int:id>")
+def show_tag(id):
+    """Show tag detail page"""
+
+    tag = Tag.query.get_or_404(id)
+
+    return render_template("tag.html" , tag=tag)
+
+
+@app.route("/tags/<int:id>/edit")
+def show_edit_tag_form(id):
+    """Show the edit edit tag form"""
+    tag = Tag.query.get_or_404(id)
+    return render_template("tag_edit.html" , tag=tag)
+
+@app.route("/tags/<int:id>/edit" , methods=["POST"])
+def handle_edit_tag_form(id):
+    """Handle the edit tag action"""
+    tag = Tag.query.get_or_404(id)
+    name = request.form.get("name" , "").strip()
+
+    if len(name) == 0:
+        message = "Name is required!"
+        return render_template("tag_edit.html" , tag=tag , message=message)
+    elif Tag.query.filter(Tag.name==name , Tag.id != tag.id).count() > 0:
+        message = f"{name} already exist! Please try another one!"
+        return render_template("tag_edit.html" , tag=tag , message=message)
+
+    try:
+        tag.name = name
+        db.session.add(tag)
+        db.session.commit()
+
+        return redirect(f"/tags/{tag.id}")
+    except:
+        db.session.rollback()
+        message = "Error when updating tag!"
+        return render_template("tag_edit.html" , tag=tag , message=message)
+        
+
+@app.route("/tags/<int:id>/delete" , methods=["POST"])
+def handle_delete_tag(id):
+    """Handle the delete tag action"""
+
+    tag = Tag.query.get_or_404(id)
+
+    try:
+        Tag.query.filter_by(id=id).delete()
+        db.session.commit()
+
+        flash("Successfully delete a tag!")
+
+        return redirect(f"/tags")
+    except:
+        db.session.rollback()
+        flash("Error when deleting tag!")
+        return redirect(f"/tags/{id}")
 
 
 @app.errorhandler(404)

@@ -37,7 +37,7 @@
     color: red;
     text-align: center;
 }
-.form input{
+.form input[type=text]{
     width: 100%;
     font-size: 1em;
     margin: 5px;
@@ -77,4 +77,14 @@
 .button-delete{
     background-color: red;
     color: white;
+}
+.tag{
+    background-color: blue;
+    padding: 5px;
+    margin: 5px 10px 5px 10px;
+    color: white;
+    border-radius: 5px;
+}
+.tag-title{
+    font-weight: bold;
 }

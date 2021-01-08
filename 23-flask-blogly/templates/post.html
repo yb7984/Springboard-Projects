@@ -10,6 +10,12 @@
     <div class="content">
         {{post.content}}
     </div>
+    <div class="tags">
+        <span class="tag-title">Tags: </span>
+        {% for tag in post.tags %}
+            <span class="tag">{{tag.name}}</span>
+        {% endfor %}
+    </div>
     <div class="author">
         Posted by {{post.user.full_name}} on {{post.created_at.strftime(" %a %b %d %Y , %I:%M %p")}}
     </div>

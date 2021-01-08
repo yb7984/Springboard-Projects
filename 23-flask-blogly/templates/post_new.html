@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Create a user
+Add Post for {{user.full_name}}
 {% endblock %}
 
 {% block content %}
@@ -22,8 +22,18 @@ Create a user
             Content
         </div>
         <textarea id="content" name="content">{{content}}</textarea>
+        <div>
+            Tags
+        </div>
+        <div>
+            {% for tag in tags %}
+                <input type="checkbox" name="tags" id="tags{{tag.id}}" value="{{tag.id}}" />
+                <label for="tags{{tag.id}}">{{tag.name}}</label>
+            {% endfor %}
+        </div>
         <div class="action">
-            <button type="reset" class="button button-reset">Cancel</button><button type="submit" class="button button-submit">Add</button>
+            <button type="reset" class="button button-reset">Cancel</button><button type="submit"
+                class="button button-submit">Add</button>
         </div>
 
     </form>
