@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Adoption Agency
+{% endblock %}
+
+{% block content %}
+
+    <p class="display-1">Pets</p>
+    {% with pets = pets_available %}
+    {% include "list.html" %}
+    {% endwith %}
+
+    <p class="display-1">No longer available</p>
+
+    {% with pets = pets_unavailable %}
+    {% include "list.html" %}
+    {% endwith %}
+
+    <a href="/add" class="btn btn-success">Add a Pet</a>
+{% endblock %}

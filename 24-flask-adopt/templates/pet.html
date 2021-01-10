@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Adoption Agency
+{% endblock %}
+
+{% block content %}
+<div>
+    <p class="display-1">{{pet.name}}</p>
+    <div>
+        {% if pet.get_photo_url() %}
+        <img src="{{pet.get_photo_url()}}" class="img-fluid img-thumbnail rounded" />
+        {% endif %}
+        <div class="fs-4">
+            <span class="text-info">Species: </span> {{pet.species}}
+        </div>
+        {% if pet.age %}
+        <div class="fs-4">
+            <span class="text-info">Age:</span> {{pet.age}}
+        </div>
+        {% endif %}
+        {% if pet.notes %}
+        <div class="fs-4">
+            <span class="text-info">Notes: </span> {{pet.notes}}
+        </div>
+        {% endif %}
+        <div class="fs-4">
+            {% if pet.available %}
+            <span class="text-success">Available</span>
+            {% else %}
+            <span class="text-warning">Unvailable</span>
+            {% endif %}
+        </div>
+
+    </div>
+    <p class="display-1">Edit this pet</p>
+    <div>
+        {% include "form.html"%}
+    </div>
+</div>
+{% endblock %}

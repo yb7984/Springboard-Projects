@@ -1,0 +1,19 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+    {% for pet in pets %}
+    <div class="col p-2">
+        {% if pet.get_photo_url() %}
+        <a href="/{{pet.id}}"><img src="{{pet.get_photo_url()}}" class="img-fluid img-thumbnail rounded" /></a>
+        {% endif %}
+        <div class="fs-5">
+            <a href="/{{pet.id}}" class="link-success fw-bold">{{pet.name}}</a> 
+            {% if pet.available %}
+            <span class="text-secondary fw-bold">is Available!</span> 
+            {% else %}
+            <span class="text-secondary">is unavailable!</span> 
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
