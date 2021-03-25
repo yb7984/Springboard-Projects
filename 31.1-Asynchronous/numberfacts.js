@@ -38,7 +38,7 @@ getFacts(["1..3", "4..6", 10]);
 /**
  * get facts of 4 number
  */
-async function get4Facts() {
+function get4Facts() {
     const resp1 = axios.get(`http://numbersapi.com/3/trivia?json`);
     const resp2 = axios.get(`http://numbersapi.com/6/trivia?json`);
     const resp3 = axios.get(`http://numbersapi.com/9/trivia?json`);

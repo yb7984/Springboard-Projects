@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cards {
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+        }
+
+        .card0 {
+            top: 200px;
+            position: absolute;
+            z-index: 1000;
+            transform: rotate();
+        }
+        .card1 {
+            top: 200px;
+            position: absolute;
+            z-index: 1000;
+            transform: rotate(30deg);
+        }
+        .card2 {
+            top: 200px;
+            position: absolute;
+            z-index: 1000;
+            transform: rotate(60deg);
+        }
+        .card3 {
+            top: 200px;
+            position: absolute;
+            z-index: 1000;
+            transform: rotate(90deg);
+        }
+        .card4 {
+            top: 200px;
+            position: absolute;
+            z-index: 1000;
+            transform: rotate(120deg);
+        }
+        .card5 {
+            top: 200px;
+            position: absolute;
+            z-index: 1000;
+            transform: rotate(150deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;"><button id="btn-card">Give me a card</button></div>
+    <div>
+        <div id="cards" class="cards"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="deckofcards.js"></script>
+</body>
+
+</html>

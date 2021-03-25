@@ -30,14 +30,14 @@ function showCard(deck_id) {
             remaining = data["remaining"];
 
             const card = data["cards"][0];
-            cards.insertAdjacentHTML("beforeend" , `<img id="card-${card["code"]}" src="${card["image"]}" class="card${remaining % 6}" />`)
-        
+            cards.insertAdjacentHTML("beforeend", `<img id="card-${card["code"]}" src="${card["image"]}" class="card${remaining % 6}" />`)
+
             const cardImage = document.getElementById(`card-${card["code"]}`);
-            if (remaining === 0){
+            if (remaining === 0) {
                 deck_id = null;
             }
 
-            console.log("remaining" , remaining);
+            console.log("remaining", remaining);
         });
 }
 
@@ -64,20 +64,22 @@ function getTwoCard() {
     const cards = [];
     axios.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
         .then(resp => {
-            getCard(resp.data["deck_id"]).then(resp => {
-                if (resp.data["cards"].length > 0) {
-                    cards.push(resp.data["cards"][0]);
-                }
-                return getCard(resp.data["deck_id"]);
-            }).then(resp => {
-                if (resp.data["cards"].length > 0) {
-                    cards.push(resp.data["cards"][0]);
-                }
+            getCard(resp.data["deck_id"])
+                .then(resp => {
+                    if (resp.data["cards"].length > 0) {
+                        cards.push(resp.data["cards"][0]);
+                    }
+                    return getCard(resp.data["deck_id"]);
+                })
+                .then(resp => {
+                    if (resp.data["cards"].length > 0) {
+                        cards.push(resp.data["cards"][0]);
+                    }
 
-                cards.forEach(card => {
-                    console.log(`${card["value"]} of ${card["suit"]}`);
+                    cards.forEach(card => {
+                        console.log(`${card["value"]} of ${card["suit"]}`);
+                    });
                 });
-            });
         });
 }
 
