@@ -43,6 +43,25 @@ app.get("/mode", (req, res, next) => {
     }
 });
 
+
+app.get("/all", (req, res, next) => {
+    try {
+        const nums = getNums(req.query.nums);
+        const mean = getMean(nums);
+        const median = getMedian(nums);
+        const mode = getMode(nums);
+
+        return res.json({
+            operation: "all",
+            mean: mean,
+            median: median,
+            mode: mode
+        });
+    } catch (err) {
+        next(err);
+    }
+});
+
 // 404 handler
 app.use(function (req, res, next) {
     const notFoundError = new ExpressError("Not Found", 404);
