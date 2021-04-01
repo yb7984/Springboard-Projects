@@ -7,7 +7,7 @@ const items = require('../fakeDb');
 
 router.get('/', (req, res, next) => {
     try {
-        res.json(items)
+        return res.json(items)
     } catch (err) {
         next(err);
     }
@@ -44,7 +44,7 @@ router.get('/:name', (req, res, next) => {
         if (item === undefined) {
             throw new ExpressError('Item not found', 404);
         }
-        res.json(item)
+        return res.json(item)
     } catch (err) {
         next(err);
     }
