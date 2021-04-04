@@ -10,9 +10,11 @@ const db = require('./db');
 
 app.use(express.json());
 
+const industriesRoutes = require('./routes/industries');
 const companiesRoutes = require('./routes/companies');
 const invoicesRoutes = require('./routes/invoices');
 
+app.use('/industries' , industriesRoutes)
 app.use('/companies' , companiesRoutes);
 app.use('/invoices' , invoicesRoutes);
 

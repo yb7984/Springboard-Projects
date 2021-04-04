@@ -5,6 +5,9 @@ const router = new express.Router();
 const ExpressError = require('../expressError');
 const db = require('../db');
 
+/**
+ * Return info on invoices: like {invoices: [{id, comp_code}, ...]}
+ */
 router.get('/', async (req, res, next) => {
     try {
         const results = await db.query('SELECT id , comp_code FROM invoices');
@@ -15,7 +18,11 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-
+/**
+ * Returns obj on given invoice.
+ * If invoice cannot be found, returns 404.
+ * Returns {invoice: {id, amt, paid, add_date, paid_date, company: {code, name, description}}}
+ */
 router.get('/:id', async (req, res, next) => {
     try {
         const results = await db.query(`
@@ -31,12 +38,12 @@ router.get('/:id', async (req, res, next) => {
         }
 
         const { id, amt, paid, add_date, paid_date } = results.rows[0];
-        const { code, name, description } = results.rows[0];
+        const { comp_code, name, description } = results.rows[0];
 
         return res.json({
             invoice: {
                 id, amt, paid, add_date, paid_date,
-                company: { code, name, description }
+                company: { code : comp_code, name, description }
             }
         });
     } catch (err) {
@@ -44,7 +51,11 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-
+/**
+ * Adds an invoice.
+ * Needs to be passed in JSON body of: {comp_code, amt}
+ * Returns: {invoice: {id, comp_code, amt, paid, add_date, paid_date}}
+ */
 router.post('/', async (req, res, next) => {
     try {
 
@@ -54,14 +65,16 @@ router.post('/', async (req, res, next) => {
             throw new ExpressError('comp_code and amt are required', 400);
         }
 
-        if (req.body.amt <= 0) {
+        const amt = Number(req.body.amt);
+
+        if (amt === NaN || amt <= 0) {
             throw new ExpressError('amt must be greater than 0', 400);
         }
 
         const company = await db.query('SELECT code FROM companies WHERE code = $1', [req.body.comp_code]);
 
         if (company.rows.length === 0) {
-            throw new ExpressError(`company with code ${req.params.code} can not be found`, 400);
+            throw new ExpressError(`company with code ${req.body.comp_code} can not be found`, 400);
 
         }
 
@@ -80,9 +93,27 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-
+/**
+ * Updates an invoice.
+ * If invoice cannot be found, returns a 404.
+ * Needs to be passed in a JSON body of {amt, paid}
+ * If paying unpaid invoice: sets paid_date to today
+ * If un-paying: sets paid_date to null
+ * Else: keep current paid_date
+ * Returns: {invoice: {id, comp_code, amt, paid, add_date, paid_date}}
+ */
 router.put('/:id', async (req, res, next) => {
     try {
+
+        if (req.body.amt === undefined){
+            throw new ExpressError('amt is required', 400);
+        }
+        const amt = Number(req.body.amt);
+
+        if (amt === NaN || amt <= 0) {
+            throw new ExpressError('amt must be greater than 0', 400);
+        }
+
         const results = await db.query(
             `
             UPDATE invoices 
@@ -97,13 +128,39 @@ router.put('/:id', async (req, res, next) => {
             throw new ExpressError(`invoice with id ${req.params.id} can not be found`, 404);
         }
 
-        return res.json({ company: results.rows[0] });
+
+        if (req.body.paid !== undefined) {
+            if (req.body.paid === true || req.body.paid === false) {
+                //only set paid to true or false would update the paid_date
+
+                const paid = req.body.paid === true ? true : false;
+                const paidDate = paid ? (new Date()).toISOString().substr(0, 10) : null;
+
+                const results = await db.query(`
+                UPDATE invoices 
+                SET
+                    paid = $2,
+                    paid_date = $3
+                WHERE
+                    id = $1
+                RETURNING id, comp_code, amt, paid, add_date, paid_date` ,
+                    [req.params.id, paid , paidDate]);
+
+                return res.json({ invoice: results.rows[0] });
+            }
+        }
+
+        return res.json({ invoice: results.rows[0] });
     } catch (err) {
         next(err);
     }
 });
 
-
+/**
+ * Deletes an invoice.
+ * If invoice cannot be found, returns a 404.
+ * Returns: {status: "deleted"}
+ */
 router.delete('/:id', async (req, res, next) => {
     try {
         const results = await db.query(
