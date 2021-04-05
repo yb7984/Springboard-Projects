@@ -50,7 +50,7 @@ class Customer {
          notes
       FROM customers
       WHERE
-      first_name ILIKE $1 OR last_name ILIKE $1
+      document_vectors @@ TO_TSQUERY($1)
       ORDER BY last_name, first_name` , [`%${term.toLowerCase()}%`]
     );
     return results.rows.map(c => new Customer(c));
@@ -131,6 +131,12 @@ class Customer {
         [this.firstName, this.lastName, this.phone, this.notes, this.id]
       );
     }
+
+    await db.query(
+      `UPDATE customers 
+      SET 
+        document_vectors = (TO_TSVECTOR(first_name) || TO_TSVECTOR(last_name) || TO_TSVECTOR(COALESCE(phone , '')) || TO_TSVECTOR(notes))
+      WHERE id=$1`, [this.id]);
   }
 }
 

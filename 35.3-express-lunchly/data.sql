@@ -8,7 +8,7 @@ CREATE TABLE customers (
     first_name text NOT NULL,
     last_name text NOT NULL,
     phone text,
-    notes text DEFAULT '' NOT NULL
+    notes text DEFAULT '' NOT NULL 
 );
 
 CREATE TABLE reservations (
@@ -329,5 +329,15 @@ COPY public.reservations (id, customer_id, start_at, num_guests, notes) FROM std
 SELECT pg_catalog.setval('public.customers_id_seq', 100, true);
 SELECT pg_catalog.setval('public.reservations_id_seq', 200, true);
 
+
+ALTER TABLE customers ADD "document_vectors" tsvector;
+
+CREATE INDEX customer_fts_doc_vec_idx ON customers USING gin(document_vectors);
 CREATE INDEX reservations_customer_id_idx ON public.reservations USING btree (customer_id);
 CREATE INDEX reservations_start_at_idx ON public.reservations USING btree (start_at);
+
+
+UPDATE 
+    customers 
+SET 
+    document_vectors = (to_tsvector(first_name) || to_tsvector(last_name) || to_tsvector(COALESCE(phone , '')) || to_tsvector(notes));
