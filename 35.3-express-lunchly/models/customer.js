@@ -50,7 +50,7 @@ class Customer {
          notes
       FROM customers
       WHERE
-      LOWER(first_name) LIKE $1 OR Lower(last_name) LIKE $1
+      first_name ILIKE $1 OR last_name ILIKE $1
       ORDER BY last_name, first_name` , [`%${term.toLowerCase()}%`]
     );
     return results.rows.map(c => new Customer(c));
