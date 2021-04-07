@@ -29,6 +29,11 @@ afterEach(async function (done) {
 });
 
 
+afterAll(async function () {
+    await db.end();
+});
+
+
 /** 
  * GET /invoices - 
  * returns `{invoices : [{id , comp_code}]}` 

@@ -31,6 +31,12 @@ afterEach(async function (done) {
 });
 
 
+afterAll(async function () {
+    await db.end();
+});
+
+
+
 
 /** 
  * GET /companies - 
@@ -194,4 +200,6 @@ describe("DELETE /companies/:name", function () {
         expect(resp1.statusCode).toBe(404);
     });
 });
-  // end
+// end
+
+

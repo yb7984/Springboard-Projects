@@ -31,6 +31,12 @@ afterEach(async function (done) {
 });
 
 
+afterAll(async function () {
+    await db.end();
+});
+
+
+
 /** 
  * GET /industries - 
  * returns `{industries : [{"code": "it" , "name": "IT"}]}` 
