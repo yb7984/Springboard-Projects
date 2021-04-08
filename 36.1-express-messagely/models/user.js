@@ -33,7 +33,7 @@ class User {
       return result.rows[0];
     }
     catch (e) {
-      if (e.code === 23505) {
+      if (e.code === '23505') {
         throw new ExpressError('username taken. please choose another one.', 400);
       }
 
