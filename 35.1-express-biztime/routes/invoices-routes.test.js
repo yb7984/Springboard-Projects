@@ -188,7 +188,7 @@ describe("PUT /invoices/:name", function () {
                 amt: 20.20,
                 paid: true,
                 add_date: invoice.add_date.toISOString(),
-                paid_date: (new Date((new Date()).toDateString())).toISOString()
+                paid_date: expect.any(String)
             }
         });
     });
