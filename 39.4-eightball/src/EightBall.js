@@ -29,7 +29,7 @@ const EightBall = ({
     const getRandom = () => (Math.floor(Math.random() * answers.length));
 
     const reset = () => {
-        setCount(0);
+        setCount({});
         setColor("black");
         setMsg("Think of a Question");
     }
