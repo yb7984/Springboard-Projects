@@ -1,0 +1,32 @@
+.EightBall {
+    width: 350px;
+    margin: auto;
+    text-align: center;
+}
+.EightBall-ball{
+    height: 350px;
+    width: 350px;
+    border-radius: 175px;
+    background-color: black;
+    margin: 20px auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.EightBall-msg {
+    color: white;
+    font-size: 2em;
+    margin: 10px;
+}
+.EightBall-counter {
+    text-align: left;
+    color: blue;
+    font-size: 1.5em;
+}
+.EightBall button{
+    font-size: 1.5em;
+    background-color: blue;
+    color:white;
+    width: 100px;
+    margin: auto;
+}
