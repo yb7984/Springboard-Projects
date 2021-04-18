@@ -1,0 +1,30 @@
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.PokeCard{
+    width: 200px;
+    background-color: lightgray;
+    margin: 10px auto 10px auto;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    animation: 1s ease-out 0s 1 slideInFromTop;
+}
+.PokeCard-img{
+    width: 150px;
+    margin: auto;
+}
+.PokeCard-name{
+    font-size: x-large;
+    color: blue;
+}
+
+.PokeCard-detail{
+    font-size: larger;
+}

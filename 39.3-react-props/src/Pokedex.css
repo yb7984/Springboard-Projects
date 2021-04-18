@@ -1,0 +1,25 @@
+.Pokedex{
+    max-width: 1000px;
+    margin: auto;
+}
+.Pokedex-title{
+    text-align: center;
+    font-size: 3em;
+    color: grey;
+    padding: 10px;
+}
+
+.Pokedex-totalExp{
+    font-size: 0.5em;
+    color: blue;
+}
+.Pokedex-winner{
+    color: gold;
+}
+.Pokedex-loser{
+    color: grey;
+}
+.Pokedex-Cards{
+    display: flex;
+    flex-wrap: wrap;
+}
