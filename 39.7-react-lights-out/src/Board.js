@@ -34,8 +34,6 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
   function createBoard() {
     let initialBoard = [];
     // create array-of-arrays of true/false values
-    console.log(Math.random());
-
     for (let y = 0; y < nrows; y++) {
       const row = [];
       for (let x = 0; x < ncols; x++) {
@@ -43,6 +41,42 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
       }
       initialBoard.push(row);
     }
+
+    // Here is the code make board solvable, 
+    // make the winning board and randomly click some cells
+    // Haven written test for it
+    // for (let y = 0; y < nrows; y++) {
+    //   const row = [];
+    //   for (let x = 0; x < ncols; x++) {
+    //     row.push(false);
+    //   }
+    //   initialBoard.push(row);
+    // }
+
+    // const flipCell = (y, x, board) => {
+    //   // if this coord is actually on board, flip it
+    //   if (x >= 0 && x < ncols && y >= 0 && y < nrows) {
+    //     board[y][x] = !board[y][x];
+    //   }
+    // };
+
+    // const flipCellsAroundMe = (y, x, board) => {
+    //   for (let i = y - 1; i <= y + 1; i++) {
+    //     for (let j = x - 1; j <= x + 1; j++) {
+    //       flipCell(i , j , board);
+    //     }
+    //   }
+    // }
+
+    // let count = 0;
+    // while (count < 10) {
+    //   let y = Math.floor(Math.random() * nrows);
+    //   let x = Math.floor(Math.random() * ncols);
+
+    //   flipCellsAroundMe(y, x, initialBoard);
+
+    //   count++
+    // }
 
     return initialBoard;
   }
