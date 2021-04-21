@@ -1,0 +1,436 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <table
+      class="Board"
+    >
+      <tbody>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+        </tr>
+        <tr>
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell Cell-lit"
+            data-testid="cell"
+          />
+          <td
+            class="Cell "
+            data-testid="cell"
+          />
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;

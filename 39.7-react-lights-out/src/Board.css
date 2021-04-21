@@ -1,0 +1,17 @@
+.Board {
+  margin: 0 auto;
+  background-color: lightseagreen;
+}
+
+.Board-won{
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3em;
+  background-color: gold;
+  color: red;
+  font-weight: 500;
+  height: 200px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
