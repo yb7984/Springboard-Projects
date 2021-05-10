@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Todo"
+    data-testid="todo-undefined"
+  >
+    <div
+      class="Todo-control"
+    >
+      <button
+        class="Todo-btn-edit"
+        data-testid="edit-undefined"
+      >
+        Edit
+      </button>
+      <button
+        class="Todo-btn-complete"
+        data-testid="complete-undefined"
+      >
+        Mark as completed
+      </button>
+      <button
+        class="Todo-btn-delete"
+        data-testid="del-undefined"
+      >
+        X
+      </button>
+    </div>
+    <div
+      class="Todo-todo "
+      data-testid="todo-text-undefined"
+    />
+  </div>
+</DocumentFragment>
+`;

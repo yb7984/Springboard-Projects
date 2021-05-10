@@ -1,0 +1,7 @@
+.BoxList{
+    background-color: cornflowerblue;
+}
+.BoxList-list{
+    display: flex;
+    flex-wrap: wrap;
+}

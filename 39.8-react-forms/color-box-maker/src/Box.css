@@ -1,0 +1,19 @@
+.Box{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+.Box-box{
+    border-radius: 10px;
+}
+.Box-btn{
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    color: red;
+    position: relative;
+    left: -30px;
+}

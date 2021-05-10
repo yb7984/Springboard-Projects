@@ -1,0 +1,345 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add new todo works 1`] = `
+<DocumentFragment>
+  <div
+    class="TodoList"
+  >
+    <div
+      class="TodoForm"
+    >
+      <form>
+        <label
+          for="todo-"
+        >
+          New Todo:
+        </label>
+        <input
+          id="todo-"
+          name="todo"
+          placeholder="Things to do"
+          required=""
+          type="text"
+          value=""
+        />
+        <button>
+          Add Todo
+        </button>
+      </form>
+    </div>
+    <div
+      class="TodoList-list"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`complete todo works 1`] = `
+<DocumentFragment>
+  <div
+    class="TodoList"
+  >
+    <div
+      class="TodoForm"
+    >
+      <form>
+        <label
+          for="todo-"
+        >
+          New Todo:
+        </label>
+        <input
+          id="todo-"
+          name="todo"
+          placeholder="Things to do"
+          required=""
+          type="text"
+          value=""
+        />
+        <button>
+          Add Todo
+        </button>
+      </form>
+    </div>
+    <div
+      class="TodoList-list"
+    >
+      <div
+        class="Todo"
+        data-testid="todo-1"
+        id="1"
+      >
+        <div
+          class="Todo-control"
+        >
+          <button
+            class="Todo-btn-edit"
+            data-testid="edit-1"
+          >
+            Edit
+          </button>
+          <button
+            class="Todo-btn-complete"
+            data-testid="complete-1"
+          >
+            Mark as completed
+          </button>
+          <button
+            class="Todo-btn-delete"
+            data-testid="del-1"
+          >
+            X
+          </button>
+        </div>
+        <div
+          class="Todo-todo "
+          data-testid="todo-text-1"
+        >
+          test todo updated
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`delete todo works 1`] = `
+<DocumentFragment>
+  <div
+    class="TodoList"
+  >
+    <div
+      class="TodoForm"
+    >
+      <form>
+        <label
+          for="todo-"
+        >
+          New Todo:
+        </label>
+        <input
+          id="todo-"
+          name="todo"
+          placeholder="Things to do"
+          required=""
+          type="text"
+          value=""
+        />
+        <button>
+          Add Todo
+        </button>
+      </form>
+    </div>
+    <div
+      class="TodoList-list"
+    >
+      <div
+        class="Todo"
+        data-testid="todo-1"
+        id="1"
+      >
+        <div
+          class="Todo-control"
+        >
+          <button
+            class="Todo-btn-edit"
+            data-testid="edit-1"
+          >
+            Edit
+          </button>
+          <button
+            class="Todo-btn-complete"
+            data-testid="complete-1"
+          >
+            Mark as completed
+          </button>
+          <button
+            class="Todo-btn-delete"
+            data-testid="del-1"
+          >
+            X
+          </button>
+        </div>
+        <div
+          class="Todo-todo "
+          data-testid="todo-text-1"
+        >
+          test todo
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`edit todo works 1`] = `
+<DocumentFragment>
+  <div
+    class="TodoList"
+  >
+    <div
+      class="TodoForm"
+    >
+      <form>
+        <label
+          for="todo-"
+        >
+          New Todo:
+        </label>
+        <input
+          id="todo-"
+          name="todo"
+          placeholder="Things to do"
+          required=""
+          type="text"
+          value=""
+        />
+        <button>
+          Add Todo
+        </button>
+      </form>
+    </div>
+    <div
+      class="TodoList-list"
+    >
+      <div
+        class="Todo"
+        data-testid="todo-1"
+        id="1"
+      >
+        <div
+          class="Todo-control"
+        >
+          <button
+            class="Todo-btn-edit"
+            data-testid="edit-1"
+          >
+            Edit
+          </button>
+          <button
+            class="Todo-btn-complete"
+            data-testid="complete-1"
+          >
+            Mark as completed
+          </button>
+          <button
+            class="Todo-btn-delete"
+            data-testid="del-1"
+          >
+            X
+          </button>
+        </div>
+        <div
+          class="Todo-todo "
+          data-testid="todo-text-1"
+        >
+          test todo
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`load from localStorage 1`] = `
+<DocumentFragment>
+  <div
+    class="TodoList"
+  >
+    <div
+      class="TodoForm"
+    >
+      <form>
+        <label
+          for="todo-"
+        >
+          New Todo:
+        </label>
+        <input
+          id="todo-"
+          name="todo"
+          placeholder="Things to do"
+          required=""
+          type="text"
+          value=""
+        />
+        <button>
+          Add Todo
+        </button>
+      </form>
+    </div>
+    <div
+      class="TodoList-list"
+    >
+      <div
+        class="Todo"
+        data-testid="todo-1"
+        id="1"
+      >
+        <div
+          class="Todo-control"
+        >
+          <button
+            class="Todo-btn-edit"
+            data-testid="edit-1"
+          >
+            Edit
+          </button>
+          <button
+            class="Todo-btn-complete"
+            data-testid="complete-1"
+          >
+            Mark as completed
+          </button>
+          <button
+            class="Todo-btn-delete"
+            data-testid="del-1"
+          >
+            X
+          </button>
+        </div>
+        <div
+          class="Todo-todo "
+          data-testid="todo-text-1"
+        >
+          test todo
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="TodoList"
+  >
+    <div
+      class="TodoForm"
+    >
+      <form>
+        <label
+          for="todo-"
+        >
+          New Todo:
+        </label>
+        <input
+          id="todo-"
+          name="todo"
+          placeholder="Things to do"
+          required=""
+          type="text"
+          value=""
+        />
+        <button>
+          Add Todo
+        </button>
+      </form>
+    </div>
+    <div
+      class="TodoList-list"
+    />
+  </div>
+</DocumentFragment>
+`;
