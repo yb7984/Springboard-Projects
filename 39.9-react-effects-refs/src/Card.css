@@ -1,0 +1,88 @@
+@keyframes slideInFromTop-0 {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromTop-1 {
+    0% {
+        transform: translateY(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateY(0) rotate(30deg);
+    }
+}
+@keyframes slideInFromTop-2 {
+    0% {
+        transform: translateY(-100%) rotate(60deg);
+    }
+    100% {
+        transform: translateY(0) rotate(60deg);
+    }
+}
+
+@keyframes slideInFromTop-3 {
+    0% {
+        transform: translateY(-100%) rotate(90deg);
+    }
+    100% {
+        transform: translateY(0) rotate(90deg);
+    }
+}
+
+@keyframes slideInFromTop-4 {
+    0% {
+        transform: translateY(-100%) rotate(120deg);
+    }
+    100% {
+        transform: translateY(0) rotate(120deg);
+    }
+}
+
+@keyframes slideInFromTop-5 {
+    0% {
+        transform: translateY(-100%) rotate(150deg);
+    }
+    100% {
+        transform: translateY(0) rotate(150deg);
+    }
+}
+
+.Card {
+    top: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.Card-0 {
+    transform: rotate();
+    animation: 0.5s ease-out 0s 1 slideInFromTop-0;
+}
+
+.Card-1 {
+    transform: rotate(30deg);
+    animation: 0.5s ease-out 0s 1 slideInFromTop-1;
+}
+
+.Card-2 {
+    transform: rotate(60deg);
+    animation: 0.5s ease-out 0s 1 slideInFromTop-2;
+}
+
+.Card-3 {
+    transform: rotate(90deg);
+    animation: 0.5s ease-out 0s 1 slideInFromTop-3;
+}
+
+.Card-4 {
+    transform: rotate(120deg);
+    animation: 0.5s ease-out 0s 1 slideInFromTop-4;
+}
+
+.Card-5 {
+    transform: rotate(150deg);
+    animation: 0.5s ease-out 0s 1 slideInFromTop-5;
+}

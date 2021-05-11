@@ -1,5 +1,5 @@
 import React from "react";
-import { render, asFragment } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import App from "./App";
 
 //make thae random just out put 0.2 and 0.8 one after another

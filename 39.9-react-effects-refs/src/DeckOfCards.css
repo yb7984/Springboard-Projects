@@ -1,0 +1,41 @@
+.DeckOfCards {
+    position: relative;
+}
+
+.DeckOfCards-control {
+    text-align: center;
+    padding: 20px;
+}
+
+.DeckOfCards-remaining {
+    text-align: center;
+    font-size: 1.8em;
+    color: blue;
+    padding: 20px;
+    font-weight: bolder;
+}
+.DeckOfCards-remaining-number{
+    color:white;
+}
+
+.DeckOfCards-error {
+    position: absolute;
+    text-align: center;
+    font-size: 1.8em;
+    color: red;
+    width: 50vw;
+    font-weight: bolder;
+    z-index: 10000;
+    left: calc(25vw);
+}
+
+.DeckOfCards-control button {
+    font-size: 1.5em;
+    padding: 10px 30px 10px 30px;
+}
+
+.DeckOfCards-cards {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
