@@ -32,6 +32,7 @@
 .DeckOfCards-control button {
     font-size: 1.5em;
     padding: 10px 30px 10px 30px;
+    margin: 10px 20px 10px 20px;
 }
 
 .DeckOfCards-cards {
