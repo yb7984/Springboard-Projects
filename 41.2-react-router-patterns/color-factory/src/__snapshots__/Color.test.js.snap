@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, works with the colorName in colors 1`] = `
+<DocumentFragment>
+  <div
+    class="Color"
+    style="background-color: rgb(255, 0, 0);"
+  >
+    <h1>
+      This is Red
+    </h1>
+    <h1>
+      Is it beautiful?
+    </h1>
+    <h1>
+      <a
+        href="/colors"
+      >
+        Go back!
+      </a>
+    </h1>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, works with the colorName not in colors 1`] = `<DocumentFragment />`;

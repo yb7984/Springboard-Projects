@@ -1,0 +1,15 @@
+.ColorList{
+    background-color: blanchedalmond;
+    width: 100vw;
+    height: 100vh;
+}
+
+.ColorList-header{
+    padding: 50px;
+    background-color: black;
+    color: white;
+}
+
+.ColorList-colors{
+    font-size: 1.5em;
+}

@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ColorForm"
+  >
+    <form>
+      <div
+        class="ColorForm-field"
+      >
+        <label
+          for="name"
+        >
+          Color Name:
+        </label>
+        <input
+          id="name"
+          name="name"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="ColorForm-field"
+      >
+        <label
+          for="value"
+        >
+          Color Value:
+        </label>
+        <input
+          id="value"
+          name="value"
+          required=""
+          type="color"
+          value="#FFFFFF"
+        />
+      </div>
+      <button>
+        Add Color!
+      </button>
+    </form>
+    <h1>
+      <a
+        href="/colors"
+      >
+        Go back!
+      </a>
+    </h1>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot 2`] = `
+<DocumentFragment>
+  <div
+    class="ColorForm"
+  >
+    <form>
+      <div
+        class="ColorForm-field"
+      >
+        <label
+          for="name"
+        >
+          Color Name:
+        </label>
+        <input
+          id="name"
+          name="name"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="ColorForm-field"
+      >
+        <label
+          for="value"
+        >
+          Color Value:
+        </label>
+        <input
+          id="value"
+          name="value"
+          required=""
+          type="color"
+          value="#FFFFFF"
+        />
+      </div>
+      <button>
+        Add Color!
+      </button>
+    </form>
+    <h1>
+      <a
+        href="/colors"
+      >
+        Go back!
+      </a>
+    </h1>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`works with adding new color not in the list 1`] = `
+<DocumentFragment>
+  <div
+    class="ColorForm"
+  >
+    <form>
+      <div
+        class="ColorForm-field"
+      >
+        <label
+          for="name"
+        >
+          Color Name:
+        </label>
+        <input
+          id="name"
+          name="name"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="ColorForm-field"
+      >
+        <label
+          for="value"
+        >
+          Color Value:
+        </label>
+        <input
+          id="value"
+          name="value"
+          required=""
+          type="color"
+          value="#FFFFFF"
+        />
+      </div>
+      <button>
+        Add Color!
+      </button>
+    </form>
+    <h1>
+      <a
+        href="/colors"
+      >
+        Go back!
+      </a>
+    </h1>
+  </div>
+</DocumentFragment>
+`;

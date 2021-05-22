@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/colors, works with the links 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="ColorList"
+    >
+      <div
+        class="ColorList-header"
+      >
+        <h1>
+          Welcome to the color factory
+        </h1>
+        <h2>
+          <a
+            href="/colors/new"
+          >
+            Add a color
+          </a>
+        </h2>
+      </div>
+      <div>
+        <h1>
+          Please select a color:
+        </h1>
+        <div
+          class="ColorList-colors"
+        >
+          <a
+            href="/colors/Red"
+          >
+            Red
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="ColorList"
+    >
+      <div
+        class="ColorList-header"
+      >
+        <h1>
+          Welcome to the color factory
+        </h1>
+        <h2>
+          <a
+            href="/colors/new"
+          >
+            Add a color
+          </a>
+        </h2>
+      </div>
+      <div>
+        <h1>
+          Please select a color:
+        </h1>
+        <div
+          class="ColorList-colors"
+        >
+          <a
+            href="/colors/Red"
+          >
+            Red
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, /colors 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="ColorList"
+    >
+      <div
+        class="ColorList-header"
+      >
+        <h1>
+          Welcome to the color factory
+        </h1>
+        <h2>
+          <a
+            href="/colors/new"
+          >
+            Add a color
+          </a>
+        </h2>
+      </div>
+      <div>
+        <h1>
+          Please select a color:
+        </h1>
+        <div
+          class="ColorList-colors"
+        >
+          <a
+            href="/colors/Red"
+          >
+            Red
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, /colors/Blue 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="Color"
+      style="background-color: rgb(255, 0, 0);"
+    >
+      <h1>
+        This is Red
+      </h1>
+      <h1>
+        Is it beautiful?
+      </h1>
+      <h1>
+        <a
+          href="/colors"
+        >
+          Go back!
+        </a>
+      </h1>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, /colors/Blue, redirect to /colors 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="ColorList"
+    >
+      <div
+        class="ColorList-header"
+      >
+        <h1>
+          Welcome to the color factory
+        </h1>
+        <h2>
+          <a
+            href="/colors/new"
+          >
+            Add a color
+          </a>
+        </h2>
+      </div>
+      <div>
+        <h1>
+          Please select a color:
+        </h1>
+        <div
+          class="ColorList-colors"
+        >
+          <a
+            href="/colors/Red"
+          >
+            Red
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, /colors/Red 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="Color"
+      style="background-color: rgb(255, 0, 0);"
+    >
+      <h1>
+        This is Red
+      </h1>
+      <h1>
+        Is it beautiful?
+      </h1>
+      <h1>
+        <a
+          href="/colors"
+        >
+          Go back!
+        </a>
+      </h1>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, /colors/new 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="ColorForm"
+    >
+      <form>
+        <div
+          class="ColorForm-field"
+        >
+          <label
+            for="name"
+          >
+            Color Name:
+          </label>
+          <input
+            id="name"
+            name="name"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="ColorForm-field"
+        >
+          <label
+            for="value"
+          >
+            Color Value:
+          </label>
+          <input
+            id="value"
+            name="value"
+            required=""
+            type="color"
+            value="#FFFFFF"
+          />
+        </div>
+        <button>
+          Add Color!
+        </button>
+      </form>
+      <h1>
+        <a
+          href="/colors"
+        >
+          Go back!
+        </a>
+      </h1>
+    </div>
+  </div>
+</DocumentFragment>
+`;

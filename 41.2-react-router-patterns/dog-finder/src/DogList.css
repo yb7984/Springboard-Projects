@@ -1,0 +1,14 @@
+.DogList {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.DogList-item {
+    width: 25%;
+}
+
+.DogList-item img{
+    width: 90%;
+    display: block;
+}

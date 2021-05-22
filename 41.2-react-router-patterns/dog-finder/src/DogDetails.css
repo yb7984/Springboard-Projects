@@ -1,0 +1,14 @@
+.DogDetails {
+    max-width: 1024px;
+    font-size: 1.5em;
+    font-weight: 200;
+    padding: 20px;
+}
+
+.DogDetails img{
+    max-width: 500px;
+}
+
+.DogDetails ul{
+    display: inline;
+}
