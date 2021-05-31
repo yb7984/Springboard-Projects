@@ -1,0 +1,18 @@
+.MemeForm{
+    max-width: 1000px;
+    font-size: 1.5em;
+    padding: 20px;
+    margin: auto;
+}
+.MemeForm div{
+    padding: 10px;
+}
+
+.MemeForm input{
+    width: 80%;
+    font-size: 1.2em;
+}
+
+.MemeForm button{
+    font-size: 1.5em;
+}
