@@ -1,0 +1,10 @@
+.TodoForm label{
+    color: blue;
+}
+.TodoForm input{
+    width: 60%;
+}
+.TodoForm button{
+    background-color: blue;
+    color: white;
+}

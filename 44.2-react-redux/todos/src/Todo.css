@@ -1,0 +1,49 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.Todo {
+    width: 45%;
+    min-height: 100px;
+    padding: 20px;
+    background-color: lightyellow;
+    margin: 2px;
+    animation: fadeIn 2s;
+}
+
+.Todo-todo {
+    font-size: 1.3em;
+    top: 50px;
+}
+
+.Todo-todo-completed {
+    text-decoration: line-through;
+}
+
+.Todo-control {
+    width: 100%;
+    text-align: right;
+}
+
+.Todo-btn-edit {
+    color: blue;
+}
+
+.Todo-btn-complete {
+    color: green;
+}
+
+.Todo-btn-delete {
+    color: red;
+}
+
+@media (max-width:768px) {
+    .Todo {
+        width: 100%;
+    }
+}

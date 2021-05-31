@@ -1,0 +1,4 @@
+.TodoList-list{
+    display: flex;
+    flex-wrap: wrap;
+}
