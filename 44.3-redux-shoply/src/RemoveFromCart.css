@@ -1,0 +1,9 @@
+.RemoveFromCart {
+    background-color: red;
+    color: white;
+    margin: 0px 10px 0px 10px;
+}
+
+.RemoveFromCart:hover {
+    background-color: pink;
+}

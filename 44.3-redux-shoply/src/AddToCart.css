@@ -1,0 +1,10 @@
+
+.AddToCart {
+    background-color: green;
+    color: white;
+    margin: 0px 10px 0px 10px;
+}
+
+.AddToCart:hover {
+    background-color: lightgreen;
+}

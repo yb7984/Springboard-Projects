@@ -1,0 +1,56 @@
+.Product {
+    max-width: 1024px;
+    margin: 20px auto 20px auto;
+}
+
+.Product-img {
+    text-align: center;
+}
+
+.Product img {
+    max-width: 90%;
+    max-height: 280px;
+}
+
+.Product-title {
+    font-size: 3em;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.Product-price {
+    font-size: 2em;
+    text-align: center;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.Product-description {
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+.Product-control {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px;
+}
+
+.Product-control button {
+    font-size: 1.2em;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .Product {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .Product {
+        width: 100%;
+    }
+}

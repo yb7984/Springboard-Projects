@@ -1,0 +1,21 @@
+.CartItem {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: lightblue;
+    margin: 1px;
+}
+
+.CartItem-name {
+    padding:10px;
+    width: 50%;
+}
+
+.CartItem-count {
+    padding:10px;
+    width: 25%;
+}
+
+.CartItem-subtotal {
+    padding:10px;
+    width: 25%;
+}

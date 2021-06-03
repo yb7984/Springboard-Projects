@@ -1,0 +1,10 @@
+const CART_UPDATE = "CART_UPDATE";
+const CART_REMOVE = "CART_REMOVE";
+const PRODUCTS_LOAD = "PRODUCTS_LOAD";
+
+
+export {
+    CART_UPDATE,
+    CART_REMOVE, 
+    PRODUCTS_LOAD
+};

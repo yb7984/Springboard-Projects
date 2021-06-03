@@ -1,0 +1,36 @@
+.Cart {
+    max-width: 1024px;
+    margin: 0px auto;
+}
+
+.Cart-List {
+    background-color: grey;
+}
+
+.Cart-Total {
+    background-color: grey;
+    padding: 10px;
+}
+
+.Cart-Title {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: grey;
+    margin: 1px;
+    font-weight: 500;
+}
+
+.Cart-Title-name {
+    padding: 10px;
+    width: 50%;
+}
+
+.Cart-Title-count {
+    padding: 10px;
+    width: 25%;
+}
+
+.Cart-Title-subtotal {
+    padding: 10px;
+    width: 25%;
+}
