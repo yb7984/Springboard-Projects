@@ -19,4 +19,4 @@ Simplify the following big O expressions as much as possible:
  
 - O(5 + 3 + 1) ------ O(1)
 
-- O(n + n^(1/2) + n^2 + n * log(n)^10) ------ O(n * log(n)^10)
+- O(n + n^(1/2) + n^2 + n * log(n)^10) ------ O(n^2)
