@@ -2,16 +2,21 @@ import { formSet } from "./actions";
 import CommentForm from "./CommentForm";
 import CommentListItem from "./CommentListItem";
 import { useSelector, useDispatch } from "react-redux";
+import { useCallback } from "react";
 
 const CommentList = ({ comments, postId }) => {
     const dispatch = useDispatch();
     const editCommentId = useSelector(st => st.form.editCommentId);
-    const startEdit = (commentId) => {
-        dispatch(formSet("editCommentId", commentId));
-    }
-    const cancelEdit = () => {
-        dispatch(formSet("editCommentId", 0));
-    }
+    const startEdit = useCallback(
+        (commentId) => {
+            dispatch(formSet("editCommentId", commentId));
+        },
+        [dispatch]);
+    const cancelEdit = useCallback(
+        () => {
+            dispatch(formSet("editCommentId", 0));
+        },
+        [dispatch]);
 
     return (
         <div>

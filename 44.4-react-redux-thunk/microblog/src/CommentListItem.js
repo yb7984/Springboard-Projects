@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch } from "react-redux";
 import { commentDelete } from "./actionsComment";
+import { memo } from 'react';
 
-const CommentListItem = ({ postId, comment, startEdit }) => {
+const CommentListItem = memo(({ postId, comment, startEdit }) => {
 
     const dispatch = useDispatch();
 
@@ -21,6 +22,6 @@ const CommentListItem = ({ postId, comment, startEdit }) => {
             {comment.text}
         </div>
     );
-}
+});
 
 export default CommentListItem;

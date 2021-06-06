@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Votes from './Votes';
-const PostListItem = ({ post }) => {
+import {memo} from 'react';
+const PostListItem = memo(({ post }) => {
     return (
         <div>
             <div className="h3 bg-light p-2"><Link to={`/posts/${post.id}`}>{post.title}</Link></div>
@@ -10,6 +11,6 @@ const PostListItem = ({ post }) => {
             </div>
         </div>
     );
-}
+});
 
 export default PostListItem;
