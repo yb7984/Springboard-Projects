@@ -1,3 +1,4 @@
+
 function insertionSort(arr) {
 
     function insert(arr, index) {
